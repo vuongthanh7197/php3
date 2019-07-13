@@ -14,7 +14,7 @@ class HelloController extends Controller
     {
        $name = 'Thanh';
        $address = 'Ha Noi';
-       $age = '20';
+       $age = '21';
        $lop = 'Web';
 
        return view('hello', [
