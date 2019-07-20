@@ -11,8 +11,12 @@
 |
 */
 
- // Route::get('/', function () {
- //     return view('welcome');
- // });
+ Route::get('/', function () {
+     return view('welcome');
+  });
 // Route::get('users/{id}/{name}')
  Route::get('hello', 'HelloController@index');
+ Route::get('input', 'SumController@sumView')->name('sum-view');
+ Route::post('sum', 'SumController@sum')->name('sum');
+ Route::get('students','StudentController@index')->name('students');
+ Route::get('classes','ClassRoomController@index')->name('classes');
