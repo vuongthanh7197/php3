@@ -20,3 +20,12 @@
  Route::post('sum', 'SumController@sum')->name('sum');
  Route::get('students','StudentController@index')->name('students');
  Route::get('classes','ClassRoomController@index')->name('classes');
+ Route::get('table', function () {
+    return view('table');
+ });
+ Route::get('users', function () {
+    return view('user ');
+ });
+ Route::get('master', function () {
+    return view('admin.master');
+ });
