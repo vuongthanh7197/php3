@@ -14,11 +14,11 @@ class CreateClassesTable extends Migration
     public function up()
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->bigIncrements('id');// 1
-            $table->string('name')->nullable();// Nguyen Van A
-            $table->string('teacher_name')->nullable();// Nguyen Van B
-            $table->string('major')->nullable();// CNTT
-            $table->integer('max_student')->default(40);    
+            $table->bigIncrements('id');
+            $table->string('name')->nullable();// Nguyen van a 
+            $table->string('teacher_name')->nullable(); // Nguyen cc
+            $table->string('major')->nullable(); // cntt
+            $table->integer('max_student')->default(40);
             $table->timestamps();
         });
     }

@@ -11,35 +11,47 @@
 |
 */
 
- Route::get('/', function () {
-     return view('welcome');
-  });
-// Route::get('users/{id}/{name}')
- Route::get('hello', 'HelloController@index');
- Route::get('input', 'SumController@sumView')->name('sum-view');
- Route::post('sum', 'SumController@sum')->name('sum');
- Route::get('students','StudentController@index')->name('students');
- // Route::get('classes','ClassRoomController@index')->name('classes');
- Route::get('table', function () {
+Route::get('/', function () {
+    return view('welcome');
+});
+ Route::get('/login', function () {
+    return 'hello world';
+});
+ route::get('students','studentController@index')->name('students');
+
+Route::get('input', 'SomeController@sumView')->name('sum-view');
+Route::post('sum', 'SomeController@tong')->name('sum');
+Route::get('table', function () {
     return view('table');
- });
- Route::get('users', function () {
-    return view('user ');
- });
- Route::get('master', function () {
+});
+
+Route::get('master', function () {
     return view('admin.master');
- });
- // Route::get('classes/add', 'ClassRoomController@createForm')->name('classes.add-form');
- // Route::post('classes/create-post','ClassRoomController@create')->name('classes.create-post');
- // class group
- Route::group(
-(['prefix' =>'classes', 'as'=> 'classes.']),
+});
+Route::group((['prefix' => 'admins' ,'as'=> 'admins.']), function () {
+	Route::get('/','AdminController@index')->name('list');
+	Route::get('classes','AdminController@indexClass')->name('class');
+	Route::get('login', 'AdminController@getLogin')->name('getLogin');
+	Route::post('postLogin', 'AdminController@postLogin' )->name('postLogin');
+	Route::get('logout', 'AdminController@logout')->name('getLogout');
+	Route::get('register', 'AdminController@getRegister')->name('getRegister');
+	Route::post('postRegister', 'AdminController@postRegister' )->name('postRegister');
+});
+//class group
+Route::group(
+(['prefix' =>'classes',
+ 'as'=> 'classes.',
+'middleware' => ['auth','activeAdmin'],
+
+ ]),
 	function() {
-		Route::get('/','ClassRoomController@index')->name('list');
-		Route::get('add', 'ClassRoomController@createform')->name('add');
-		Route::post('create-post', 'ClassRoomController@create')->name('create');
-		Route::get('{class}/edit', 'ClassRoomController@editform')->name('edit');
-		Route::post('update-post', 'ClassRoomController@update')->name('update');
-		Route::get('{class}/remove','ClassRoomController@remove')->name('remove');
+		Route::get('/','ClassController@index')->name('list');
+		Route::get('add', 'ClassController@createform')->name('add');
+		Route::post('create-post', 'ClassController@create')->name('create');
+		Route::get('{class}/edit', 'ClassController@editform')->name('edit');
+		Route::post('update-post', 'ClassController@update')->name('update');
+		Route::get('{class}/remove','ClassController@remove')->name('remove');
+
 	}
 );
+

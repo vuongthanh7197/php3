@@ -1,3 +1,1 @@
-<div>
-	custom page
-</div>
+<div>custom page</div>

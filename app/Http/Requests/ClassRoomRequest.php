@@ -13,7 +13,7 @@ class ClassRoomRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -32,7 +32,6 @@ class ClassRoomRequest extends FormRequest
             'max_student' => 'nullable|numeric',
         ];
     }
-
     public function messages(){
         return [
                 'name.required' => 'Yêu cầu nhập tên',
@@ -44,6 +43,7 @@ class ClassRoomRequest extends FormRequest
                 'teacher_name.min' => 'Tên gv ít nhất 5 kí tự',
                 'major.required' => 'Yêu cầu nhập tên',
                 'major.string' => 'Yêu cầu là chuối',
+
         ];
     }
 }

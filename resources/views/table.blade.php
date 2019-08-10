@@ -1,6 +1,5 @@
-    
 @extends('layout.master')
-@section('title')
+@section('tieude')
     Admin page
 @endsection
 @section('table')

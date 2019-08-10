@@ -1,7 +1,5 @@
 @extends('admin.master')
-
-@section('title', 'Create New Classs')
-
+@section('title' , 'new class')
 @section('content')
 @if ($errors->any())
     <div class="alert alert-danger">

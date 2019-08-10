@@ -1,36 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>PT13312 - @yield('title')</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PT13312- @yield('tieude')</title>
+	<link rel="stylesheet" href="">
 </head>
 <body>
-	<style>
-		div {
-			border: 1px solid;
-		}
-	</style>
-	<div>
-		<div class="header">Header</div>
-		<div class="navbar">
-			<ul>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
+				<div class="container">
+					<div class="row">
+						<div class="header"> </div>
+						<div class="navbar">
+					<ul class="nav justify-content-center">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="#">1</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">2</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">3</a>
+			  </li>
+			  
 			</ul>
-		</div>
-		<div class="container">
-			<div class="content">
-				<div>@yield('table_name') table</div>
-				<div>
-					@yield('table')
+				</div>						
 				</div>
-			</div>
-			
-		</div>
-		<div class="footer">Footer</div>
-		@yield('custom')
-	</div>
+				</div>
+
+		                <div> 
+						@yield('table')
+						</div>
 </body>
 </html>

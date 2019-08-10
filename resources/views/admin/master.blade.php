@@ -212,7 +212,7 @@ desired effect
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="{{route('admins.getLogout')}}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -223,6 +223,7 @@ desired effect
           </li>
         </ul>
       </div>
+       <a href="{{route('admins.getLogout')}}" class="btn btn-default btn-flat">Sign out</a>
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
